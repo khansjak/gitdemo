@@ -1,0 +1,299 @@
+jak@Javed ~ % cd jak/                  
+jak@Javed jak % ls
+spring-sts-3.9.11
+jak@Javed jak % cd ..
+jak@Javed ~ % pwd
+/Users/jak
+jak@Javed ~ % cd Simply 
+jak@Javed Simply % ls
+drive-download-20200422T125525Z-001
+drive-download-20200422T125525Z-001.zip
+gitignore
+jdbc
+phase-1__implement_oops_using_java_with_data_structures_and_beyond_20200418.arf
+phase-1__implement_oops_using_java_with_data_structures_and_beyond_20200419.arf
+workspace
+jak@Javed Simply % mkdir mygit
+jak@Javed Simply % cd mygit 
+jak@Javed mygit % touch demo1.txt
+jak@Javed mygit % touch demo2.txt
+jak@Javed mygit % ls
+demo1.txt	demo2.txt
+jak@Javed mygit % git init 
+Initialized empty Git repository in /Users/jak/Simply/mygit/.git/
+jak@Javed mygit % 
+jak@Javed mygit % 
+jak@Javed mygit % 
+jak@Javed mygit % git add .
+jak@Javed mygit % git status 
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   demo1.txt
+	new file:   demo2.txt
+
+jak@Javed mygit % git commit -m "Git Demo Commit #1"
+[master (root-commit) c19ea14] Git Demo Commit #1
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo1.txt
+ create mode 100644 demo2.txt
+jak@Javed mygit % git remote add https://github.com/khansjak/gitdemo.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+jak@Javed mygit % git remote -t add https://github.com/khansjak/gitdemo.git
+error: unknown switch `t'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+jak@Javed mygit % git remote add origin https://github.com/khansjak/gitdemo.git
+jak@Javed mygit % git push 
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+jak@Javed mygit % git push -u origin master                                    
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/khansjak/gitdemo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+jak@Javed mygit % git branch mybranch
+jak@Javed mygit % ls
+demo1.txt	demo2.txt
+jak@Javed mygit % git checkout mybranch
+Switched to branch 'mybranch'
+jak@Javed mygit % touch demo3.txt
+jak@Javed mygit % touch demo4.txt
+jak@Javed mygit % touch demo.xml.
+jak@Javed mygit % git status 
+On branch mybranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	demo.xml.
+	demo3.txt
+	demo4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+jak@Javed mygit % git add .
+jak@Javed mygit % git status 
+On branch mybranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   demo.xml.
+	new file:   demo3.txt
+	new file:   demo4.txt
+
+jak@Javed mygit % git commit -m "Added Demo file to new Branch"
+[mybranch 9a4641b] Added Demo file to new Branch
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo.xml.
+ create mode 100644 demo3.txt
+ create mode 100644 demo4.txt
+jak@Javed mygit % git status 
+On branch mybranch
+nothing to commit, working tree clean
+jak@Javed mygit % git status 
+On branch mybranch
+nothing to commit, working tree clean
+jak@Javed mygit % git status 
+On branch mybranch
+nothing to commit, working tree clean
+jak@Javed mygit % git push -u origin mybranch 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 265 bytes | 265.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'mybranch' on GitHub by visiting:
+remote:      https://github.com/khansjak/gitdemo/pull/new/mybranch
+remote: 
+To https://github.com/khansjak/gitdemo.git
+ * [new branch]      mybranch -> mybranch
+Branch 'mybranch' set up to track remote branch 'mybranch' from 'origin'.
+jak@Javed mygit % git checkout master 
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+jak@Javed mygit % ls
+demo1.txt	demo2.txt
+jak@Javed mygit % git branch 
+* master
+  mybranch
+jak@Javed mygit % git merge mybranch 
+Updating c19ea14..9a4641b
+Fast-forward
+ demo.xml. | 0
+ demo3.txt | 0
+ demo4.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo.xml.
+ create mode 100644 demo3.txt
+ create mode 100644 demo4.txt
+jak@Javed mygit % git merge          
+Already up to date.
+jak@Javed mygit % git commit 
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+jak@Javed mygit % git checkout mybranch
+Switched to branch 'mybranch'
+Your branch is up to date with 'origin/mybranch'.
+jak@Javed mygit % git commit 
+On branch mybranch
+Your branch is up to date with 'origin/mybranch'.
+
+nothing to commit, working tree clean
+jak@Javed mygit % 
+jak@Javed mygit % 
+jak@Javed mygit % 
+jak@Javed mygit % 
+jak@Javed mygit % git branch 
+  master
+* mybranch
+jak@Javed mygit % git merge mybranch   
+\Already up to date.
+jak@Javed mygit % git merge mybranch 
+Already up to date.
+jak@Javed mygit % git checkout master 
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+jak@Javed mygit % git branch          
+* master
+  mybranch
+jak@Javed mygit % git merge mybranch
+Already up to date.
+jak@Javed mygit % git branch 
+* master
+  mybranch
+jak@Javed mygit % git checkout mybranch
+Switched to branch 'mybranch'
+Your branch is up to date with 'origin/mybranch'.
+jak@Javed mygit % git branch  
+  master
+* mybranch
+jak@Javed mygit % git push -m "Commit #3"
+error: unknown switch `m'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+jak@Javed mygit % git push -u origin mybranch       
+Branch 'mybranch' set up to track remote branch 'mybranch' from 'origin'.
+Everything up-to-date
+jak@Javed mygit % git status 
+On branch mybranch
+Your branch is up to date with 'origin/mybranch'.
+
+nothing to commit, working tree clean
+jak@Javed mygit % git push 
+Everything up-to-date
+jak@Javed mygit % checkout master 
+zsh: command not found: checkout
+jak@Javed mygit % git push 
+Everything up-to-date
+jak@Javed mygit % git branch 
+  master
+* mybranch
+jak@Javed mygit % git checkpout master 
+git: 'checkpout' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+jak@Javed mygit % git checkout master 
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+jak@Javed mygit % git push 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/khansjak/gitdemo.git
+   c19ea14..9a4641b  master -> master
+jak@Javed mygit % git branch 
+* master
+  mybranch
+jak@Javed mygit % git merge mybranch 
+Already up to date.
+jak@Javed mygit % git branch -d mybranch 
+Deleted branch mybranch (was 9a4641b).
+jak@Javed mygit % git commit -m "Deleted mybranch"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+jak@Javed mygit % git branch 
+* master
+jak@Javed mygit % git push 
+Everything up-to-date
+jak@Javed mygit % git branch --delete mybranch 
+error: branch 'mybranch' not found.
+jak@Javed mygit % git push origin --delete mybranch 
+To https://github.com/khansjak/gitdemo.git
+ - [deleted]         mybranch
+jak@Javed mygit % 
+
