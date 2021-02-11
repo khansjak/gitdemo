@@ -1,7 +1,7 @@
 jak@Javed ~ % cd jak/                  
-jak@Javed jak % ls
+@Javed jak % ls
 spring-sts-3.9.11
-jak@Javed jak % cd ..
+ak@Javed jak % cd ..
 jak@Javed ~ % pwd
 /Users/jak
 jak@Javed ~ % cd Simply 
